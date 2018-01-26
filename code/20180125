@@ -1,0 +1,21 @@
+var a = [1, 1, 1, 2, 3, 4, 5, 8, 10, 22, 24, 25, 26, 66];
+
+var nums = [];
+
+//last可以替代为nums[nums.length - 1].[nums[nums.length - 1]-1] 较为繁琐 所以舍空间换时间
+var last = -1;
+
+a.forEach((item, index) => {
+    //如果不等于上一个数
+    if (item != last + 1) {
+        //格式化单一数组
+        if (index != 0 && nums[nums.length - 1].length == 1) {
+            nums[nums.length - 1] = last;
+        }
+        nums[nums.length] = [];
+    }
+    //赋值并更新last变量
+    nums[nums.length - 1].push(item);
+    last = item;
+});
+console.log(nums);
