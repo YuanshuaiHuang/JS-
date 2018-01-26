@@ -1,0 +1,41 @@
+/*
+	1、sort函数 运用分治的思想 切换数组 逐渐消化
+	2、partition 找到切割位置 切割点左侧不大于切割点值 右侧大于切割点值
+	3、quickSort 提供给外部调用的快速排序方法 不暴露索引值
+*/
+
+function partition(arr,low,high){
+	var key = arr[low];
+	while(low < high){
+		//第一层循环 先后->前 然后前->后
+		while(arr[high]>=key && low < high){
+			high--;
+		}
+		arr[low] = arr[high];
+		while(arr[low]<=key && low < high){
+			low++;
+		}
+		arr[high] = arr[low];
+	}
+	arr[high] = key;
+	//此时的low和high相等 所以返回high也可以
+	return low;
+}
+
+function sort(arr,low,high){
+	if(low >= high){
+		return;
+	}
+	var index = partition(arr,low,high);
+	sort(arr,low,index-1);
+	sort(arr,index+1,high);
+	return arr;
+}
+
+function quickSort(arr){
+	let res = sort(arr,0,arr.length-1);
+}
+//待排序的数组
+var nums = [1,3,7,4,6];
+quickSort(nums);
+console.log(nums);
