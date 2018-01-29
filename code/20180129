@@ -1,0 +1,25 @@
+/*
+	传入一个数组 获取最大或最小值
+*/
+
+const max_1 = arr=>Math.max(...arr);
+const min_1 = arr=>Math.min(...arr);
+
+Array.prototype.max_2 = function(){ 
+return Math.max.apply({},this) 
+};
+
+Array.prototype.min_2 = function(){ 
+return Math.min.apply({},this) 
+};
+
+
+const a = [11,1,34,5,8,45,12,44,54];
+
+/*方法1*/
+console.log('第一种计算最大值的方式：'+max_1(a));
+console.log('第一种计算最小值的方式：'+min_1(a));
+
+/*方法2*/
+console.log('第二种计算最大值的方式：'+a.max_2());
+console.log('第二种计算最小值的方式：'+a.min_2());
