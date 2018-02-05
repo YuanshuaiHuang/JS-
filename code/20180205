@@ -1,0 +1,6 @@
+/*
+	返回一个数组的最低层级展现（遍历出数组中每个元素）
+*/
+const deepFlatten = arr=>[].concat(...arr.map(v=>Array.isArray(v)?deepFlatten(v) : v));
+
+console.log('[1,[2],[3,[4]],[5,[6,[7,8]]]]合并后的数组为：'+deepFlatten([1,[2],[3,[4]],[5,[6,[7,8]]]]));
