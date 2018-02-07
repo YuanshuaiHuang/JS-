@@ -1,0 +1,9 @@
+/*
+	返回a数组中不存在于b数组的值
+*/
+const difference = (a,b) =>{
+	const s = new Set(b);
+	return a.filter(x=>!s.has(x));
+}
+
+console.log('a([1,2,5,6],b[1,4,6,8]) 测试结果为：'+difference([1,2,5,6],[1,4,6,8]));
