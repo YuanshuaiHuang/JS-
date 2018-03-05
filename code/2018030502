@@ -1,0 +1,11 @@
+/*
+	反转字符串 'abcde'->'edcba'
+*/
+
+String.prototype.rev = function(){
+
+	return this.split('').reverse().join('');
+}
+//待排序的数组
+var str = 'abcde';
+console.log(str.rev());
