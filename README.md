@@ -47,3 +47,13 @@
 比如：对象[[1,6,5,1,4],1,4,6]、[[1,6,5,7,8,1,4,false],1,4,6,false]  返回值应该为[5]、[5、7、8]
 
 关键字：新建Array方法、includes和slice、Array.filter()
+
+<h2>2018-3-05-2</h2>
+
+反转字符串</br>
+
+比如：'abcde' 返回：'edcba'
+
+关键字：新建String方法、String:split、Array:reverse,join
+
+
