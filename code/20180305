@@ -1,0 +1,18 @@
+/*
+	数组去掉指定的元素
+*/
+
+Array.prototype.remove = function(){
+
+	var b = this.slice(1);
+
+	var result = this[0].filter(function(item){
+		return (!b.includes(item));
+	});
+	return result;
+}
+//待排序的数组
+var nums = [[1,6,5,1,4],1,4,6];
+var nums2 = [[1,6,5,7,8,1,4,false],1,4,6,false];
+console.log(nums.remove());
+console.log(nums2.remove());
